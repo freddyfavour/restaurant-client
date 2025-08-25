@@ -137,7 +137,7 @@ body {
   }
 
   video {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-cover brightness-50;
   }
 
   #hero-menu {
