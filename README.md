@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Adogan Restaurant Landing Page 🍲
 
-## Getting Started
+A modern, responsive landing page built for **Adogan Restaurant**.  
+Designed to highlight the restaurant’s brand, menu, and story while keeping the UI sleek and easy to navigate.
 
-First, run the development server:
+## 🚀 Features
+- Responsive design (mobile-first)
+- Animated hero section
+- Mini menu preview
+- About Us section
+- Contact form integration
+- Optimized for performance and SEO
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠️ Tech Stack
+- [Next.js](https://nextjs.org/) – React framework
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS
+- [GSAP](https://greensock.com/gsap/) – Smooth animations
+- [Vercel](https://vercel.com/) – Deployment
+
+## 📂 Project Structure
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+adogan-restaurant/
+├── public/          # Static assets
+├── src/             # Components & pages
+│   ├── components/  # Reusable UI parts
+│   ├── pages/       # Next.js pages
+│   └── styles/      # Global styles
+└── package.json
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚡ Getting Started
+Clone the repo and install dependencies:
 
-## Learn More
+```bash
+git clone https://github.com/freddyfavour/restaurant-client.git
+cd restaurant-client
+npm install
+npm run dev
+````
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) to view in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is deployed with [Vercel](https://vercel.com/).
+To deploy your own, connect the repo to Vercel and hit deploy.
 
-## Deploy on Vercel
+## 🔮 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Full online menu page
+* Reservations/booking integration
+* Gallery section for dishes & ambience
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👨‍💻 Author
+
+Built with ❤️ by [Favour Alfred](https://github.com/freddyfavour)
