@@ -44,7 +44,7 @@ const Contact = () => {
   });
 
   return (
-    <footer id="contact" className="max-md:h-[70vh]">
+    <footer id="contact">
       <img
         src="/images/footer-right-leaf.png"
         alt="leaf-right"
