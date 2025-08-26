@@ -121,9 +121,7 @@ export default function AboutUs() {
 
         <p
           ref={textRef}
-          className={`mt-10 max-w-md md:max-w-2xl text-base md:text-xl leading-relaxed font-sans ${
-            isMobile ? "relative" : "absolute"
-          }`}
+          className="mt-10 max-w-md md:max-w-2xl text-base md:text-xl leading-relaxed font-sans relative md:absolute"
         >
           At <span className="font-modern-negra text-yellow">Adogan </span>
           Restaurant, we don’t just serve food – we celebrate it. Founded with a
