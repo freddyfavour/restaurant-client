@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,6 +14,8 @@ export default function AboutUs() {
   const imgRef = useRef(null);
   const titleRef = useRef(null);
   const textRef = useRef(null);
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -36,39 +39,47 @@ export default function AboutUs() {
         },
       });
 
-      tl.to(imgRef.current, {
-        xPercent: -80,
-        scale: 1.5,
-        borderRadius: "1.5rem",
-        width: "32rem",
-        height: "24rem",
-        boxShadow: "0 0 80px rgba(231, 211, 147, 0.4)",
-        ease: "expo.inOut",
-        duration: 2,
-      });
-
-      tl.to(
-        titleRef.current,
-        {
-          xPercent: 80,
+      if (!isMobile) {
+        tl.to(imgRef.current, {
+          xPercent: -80,
+          scale: 1.5,
+          borderRadius: "1.5rem",
+          width: "32rem",
+          height: "24rem",
+          boxShadow: "0 0 80px rgba(231, 211, 147, 0.4)",
           ease: "expo.inOut",
           duration: 2,
-        },
-        "<"
-      );
+        });
+
+        tl.to(
+          titleRef.current,
+          { xPercent: 80, ease: "expo.inOut", duration: 2 },
+          "<"
+        );
+      } else {
+        tl.to(imgRef.current, {
+          scale: 1.1,
+          borderRadius: "1rem",
+          width: "20rem",
+          height: "16rem",
+          boxShadow: "0 0 40px rgba(231, 211, 147, 0.3)",
+          ease: "expo.inOut",
+          duration: 1.5,
+        });
+      }
 
       const splitText = new SplitText(textRef.current, { type: "lines" });
       gsap.set(splitText.lines, {
         opacity: 0,
-        xPercent: 80,
+        xPercent: isMobile ? 0 : 80,
         y: 80,
         color: "#6b7280",
       });
 
       tl.to(splitText.lines, {
         opacity: 1,
-        y: 50,
-        xPercent: 80,
+        y: 40,
+        xPercent: isMobile ? 0 : 80,
         color: "#e7d393",
         stagger: 0.2,
         duration: 1.2,
@@ -81,17 +92,18 @@ export default function AboutUs() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isMobile]);
 
   return (
     <section
       ref={sectionRef}
+      id="about"
       className="relative flex items-center justify-center h-screen bg-black overflow-hidden"
     >
       <div className="relative flex flex-col items-center justify-center text-center">
         <h1
           ref={titleRef}
-          className="text-7xl md:text-9xl font-modern-negra text-white tracking-wide"
+          className="text-5xl md:text-9xl font-modern-negra text-white tracking-wide"
         >
           ABOUT US
         </h1>
@@ -109,7 +121,9 @@ export default function AboutUs() {
 
         <p
           ref={textRef}
-          className="mt-10 absolute max-w-2xl text-lg md:text-xl leading-relaxed font-sans"
+          className={`mt-10 max-w-md md:max-w-2xl text-base md:text-xl leading-relaxed font-sans ${
+            isMobile ? "relative" : "absolute"
+          }`}
         >
           At <span className="font-modern-negra text-yellow">Adogan </span>
           Restaurant, we don’t just serve food – we celebrate it. Founded with a

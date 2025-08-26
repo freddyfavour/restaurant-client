@@ -49,11 +49,10 @@ const Hero = () => {
         },
       })
       .to(".right-leaf", { y: 200 }, 0)
-      .to(".left-leaf", { y: -200 }, 0)
-      .to(".arrow", { y: 100 }, 0);
+      .to(".left-leaf", { y: -200 }, 0);
 
-    const startValue = isMobile ? "top top" : "top top";
-    const endValue = isMobile ? "bottom bottom" : "bottom bottom";
+    const startValue = "top top";
+    const endValue = "bottom top";
 
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -87,7 +86,7 @@ const Hero = () => {
   return (
     <div ref={containerRef} className="relative">
       <section id="hero" className="noisy">
-        <h1 className="title">ADOGAN</h1>
+        <h1 className="title max-md:mt-[40vh]">ADOGAN</h1>
 
         <Image
           src="/images/hero-left-leaf.png"
@@ -113,7 +112,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="view-cocktails">
+            <div className="view-menus">
               <p className="subtitle">
                 Every meal at ADOGAN is a blend of tradition, rich flavors, and
                 heartfelt hospitality — crafted to bring you home.
