@@ -1,4 +1,5 @@
 "use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
@@ -6,10 +7,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { foodLists, drinkLists } from "../../constants/index.js";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const HeroWithMenu = () => {
+const Hero = () => {
   const videoRef = useRef();
   const containerRef = useRef();
 
@@ -87,20 +89,22 @@ const HeroWithMenu = () => {
       <section id="hero" className="noisy">
         <h1 className="title">ADOGAN</h1>
 
-        <img
+        <Image
           src="/images/hero-left-leaf.png"
           alt="left-leaf"
           className="left-leaf"
+          width={226}
+          height={461}
         />
-        <img
+        <Image
           src="/images/hero-right-leaf.png"
           alt="right-leaf"
           className="right-leaf"
+          width={228}
+          height={478}
         />
 
         <div className="body">
-          <img src="/images/arrow.png" alt="arrow" className="arrow" />
-
           <div className="content">
             <div className="space-y-5 hidden md:block">
               <p>Warm. Welcoming. Nigerian.</p>
@@ -184,4 +188,4 @@ const HeroWithMenu = () => {
   );
 };
 
-export default HeroWithMenu;
+export default Hero;
