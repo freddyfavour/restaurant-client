@@ -44,7 +44,7 @@ const Contact = () => {
   });
 
   return (
-    <footer id="contact">
+    <footer id="contact" className="min-h-[80vh]">
       <img
         src="/images/footer-right-leaf.png"
         alt="leaf-right"
