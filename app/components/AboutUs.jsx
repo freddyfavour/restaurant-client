@@ -98,7 +98,7 @@ export default function AboutUs() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative flex items-center justify-center h-screen bg-black overflow-hidden"
+      className="relative flex items-center justify-center min-h-screen bg-black overflow-hidden"
     >
       <div className="relative flex flex-col items-center justify-center text-center">
         <h1
